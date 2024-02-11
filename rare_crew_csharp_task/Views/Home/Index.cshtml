@@ -1,0 +1,33 @@
+﻿@model IEnumerable<rare_crew_csharp_task.Models.EmployeeViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<h1>Employees</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalTimeInHrs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="@(item.TotalTimeInHrs < 100 ? "highlight" : "")">
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                </td>
+                <td class="@(item.TotalTimeInHrs < 100 ? "highlight" : "")">
+                    @Html.DisplayFor(modelItem => item.TotalTimeInHrs)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
