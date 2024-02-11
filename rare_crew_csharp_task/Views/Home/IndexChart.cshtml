@@ -1,0 +1,13 @@
+@model rare_crew_csharp_task.Models.EmployeeTotalHoursChartData
+
+@{ 
+    var chartImageMapString = new MvcHtmlString(Model.ChartImageMap("ChartImageMap"));
+}
+
+<h2>TEST</h2>
+<div style="display: inline-block">
+    <div>
+        <img usemap="#ChartImageMap" src="@Url.Action("IndexChart", "Home")" alt="" style="width:450px;height:300px;border-width:0px;" />
+        @chartImageMapString
+    </div>
+</div>
